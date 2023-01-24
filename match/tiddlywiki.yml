@@ -1,0 +1,4 @@
+matches:
+  - trigger: ",details"
+    replace: '<<details label:"Click to reveal" src:"$|$">>'
+

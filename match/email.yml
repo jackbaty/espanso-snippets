@@ -1,0 +1,14 @@
+matches:
+  - trigger: ":sig"
+    label: "Personal"
+    replace: |
+             --·
+             Jack Baty
+             Director of Unspecified Services
+             jackbaty.com | baty.net
+  - trigger: ":sig"
+    label: "Professional"
+    replace: |
+             --· 
+             Jack Baty
+             https://jackbaty.com
