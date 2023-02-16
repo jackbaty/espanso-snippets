@@ -57,7 +57,7 @@ matches:
       - name: mydate
         type: date
         params:
-          format: "[%Y-%m-%d %a]"
+          format: "[[%Y-%m-%d-%a]]"
   - trigger: ":tt"
     replace: "{{mydate}}"
     vars:
