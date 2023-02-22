@@ -23,7 +23,8 @@ matches:
         params:
           format: "%H:%M"
     replace: "Date: {{mydate}} {{mytime}}\nTags: \nIcon: 🌀🗓❝🔗🎵📷📚 \nPermalink: /{{permalink}}/\nDraft: Yes\n\n# "
-  - trigger: ":b11"
+  - trigger: ":11"
+    label: "Eleventy Daily Post"
     vars:
       - name: mydate
         type: date
@@ -42,6 +43,26 @@ matches:
         params:
           format: "%H:%M:%S.10-4:00"
     replace: "---\ntitle: \"{{mytitle}}\"\ndate: {{mydate}}T{{mytime}}\n---\n\n"
+  - trigger: ":11"
+    label: "Eleventy Blog Post"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+      - name: mytitle
+        type: date
+        params:
+          format: "%A, %B %e, %Y"
+      - name: permalink
+        type: date
+        params:
+          format: "%Y"
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M:%S.10-4:00"
+    replace: "---\ntitle: \"$|$\"\ndate: {{mydate}}T{{mytime}}\n---\n\n"
   - trigger: ":bq"
     replace: |
              <blockquote>
