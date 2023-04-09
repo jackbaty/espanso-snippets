@@ -22,7 +22,7 @@ matches:
         type: date
         params:
           format: "%H:%M"
-    replace: "Date: {{mydate}} {{mytime}}\nTags: \nIcon: 🌀🗓❝🔗🎵📷📚 \nPermalink: /{{permalink}}/\nDraft: Yes\n\n# "
+    replace: "---\nDate: {{mydate}} {{mytime}}\nTags: \nSlug: /{{permalink}}/\nDraft: Yes\n---\n\n# "
   - trigger: ":11"
     label: "Eleventy Daily Post"
     vars:
