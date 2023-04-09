@@ -12,7 +12,7 @@ matches:
       - name: mydate
         type: date
         params:
-          format: "%A, %B %e, %Y"
+          format: "%A, %B %-e, %Y"
   - trigger: ":dl"
     replace: "{{mydate}}"
     vars:
