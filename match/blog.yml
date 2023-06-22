@@ -23,7 +23,7 @@ matches:
         type: date
         params:
           format: "%H:%M"
-    replace: "---\nDate: {{mydate}} {{mytime}}\nTags: \nLink: /{{permalink}}/\nDraft: Yes\n---\n\n# "
+    replace: "---\nDate: {{mydate}} {{mytime}}\nTags: \nDraft: Yes\n---\n\n# "
   - trigger: ":blot"
     label: "Blot Journal"
     vars:
@@ -88,3 +88,36 @@ matches:
               <cite></cite>
               </figcaption>
               </blockquote>
+  - trigger: ":bdaily"
+    label: "Baty.net Daily Post"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+      - name: mytitle
+        type: date
+        params:
+          format: "%A, %B %e, %Y"
+      - name: permalink
+        type: date
+        params:
+          format: "%Y"
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M:%S%:z"
+    replace: |
+             ---
+             title: "{{mytitle}}"
+             date: {{mydate}}T{{mytime}}
+             tags: ["Journal"]
+             slug: {{mydate}}-journal
+             summary:
+             cover:
+                 image: "cover.jpg"
+                 caption: "{{mytitle}}"
+             showtoc: true
+             tocopen: true
+             draft: true
+             ---
